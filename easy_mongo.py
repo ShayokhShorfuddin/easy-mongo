@@ -30,6 +30,7 @@ def collections(database):
 def entires_amount(collection):
     return collection.count_documents({})
 
+
 # Get All The Entries In A Collection
 def inspect(collection):
     result = []
@@ -96,11 +97,3 @@ def bulk_update(collection, operator:str , target:dict, update_to:dict):
         return collection.update_many(target, {"$set": update_to})
     
     # More will be added later if necessary
-
-
-
-
-
-mycls = cluster("mongodb+srv://shay:<password>@cluster0.sltbe.mongodb.net/?retryWrites=true&w=majority", "12345")
-mydb = database(mycls, "test")
-mycol = collection(mydb, "test")
